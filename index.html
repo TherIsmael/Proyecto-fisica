@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="my-header">
+      <div class="header__titulo">
+        <h2>Titulo</h2>
+      </div>
+      <nav>
+        <ul class="nav-bar">
+          <li><a href="#">Temas</a></li>
+          <li><a href="#">calculadora</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="main__image">
+        <div class="image--text">
+            <h1>Hola Mundo</h1>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var header = document.getElementById("my-header");
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition >= 900) {
+          // Comienza la animación después de 900 píxeles de desplazamiento
+          header.classList.add("animate");
+        } else {
+          header.classList.remove("animate");
+        }
+      });
+    </script>
+  </body>
+</html>

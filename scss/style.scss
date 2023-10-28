@@ -1,0 +1,83 @@
+$white-color: #f6f1f1;
+$primary-color: #146c94;
+$secondary-color: #19a7ce;
+$black: #000000;
+
+@font-face{
+    font-family: 'azonix';
+    src: url(../assets/fonts/Azonix.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  height: 2500px;
+}
+
+header {
+    $primary-color:rgba(20, 108, 148, .3);
+    background-color: $primary-color;
+    backdrop-filter: blur(5px);
+    font-size: 2rem;
+    width: 100%;
+    height: 24px;
+    z-index: -1;
+    position: fixed;    
+    top: 0;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    .header__titulo{
+        width: 200px;
+        padding-left: 60px;
+        
+    }
+    nav{
+        width: 300px;
+    }
+  }
+
+  header.animate {
+    animation: adjust-header 1.5s linear both;
+  }
+
+  @keyframes adjust-header {
+    to {
+      background-color: rgba(20, 108, 148);
+      backdrop-filter: blur(5px);
+      font-size: 2rem;
+      height: 200px;
+    }
+  }
+
+main {
+  width: 100%;
+  height: 1000px;
+  box-shadow: 26px 17px 90px 1px rgba(0,0,0,0.67);
+  .main__image {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/Moon\ \(1\).svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    .image--text{
+        font-family: 'azonix';
+        font-size: 5rem;
+        text-shadow: 13px 5px 13px rgba(0,0,0,0.6);
+    }
+  }
+}

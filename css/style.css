@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "azonix";
   src: url(../assets/fonts/Azonix.otf);
@@ -20,56 +21,85 @@ body {
 }
 
 header {
-  background-color: rgba(20, 108, 148, 0.3);
+  display: none;
+  background-color: #146c94;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   font-size: 2rem;
   width: 100%;
-  height: 24px;
-  z-index: -1;
+  height: 200px;
   position: fixed;
   top: 0;
-  overflow-y: hidden;
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.8s; /* Agregar una transición suave de opacidad */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 header .header__titulo {
   width: 200px;
   padding-left: 60px;
+  font-size: 3rem;
 }
 header nav {
-  width: 300px;
+  width: 500px;
+  font-size: 2.6rem;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+header nav ul a {
+  text-decoration: none;
+  color: #000000;
+}
+header nav ul a:hover {
+  color: #f6f1f1;
+  transition: color cubic-bezier(0.55, 0.09, 0.68, 0.53) 0.3s;
 }
 
 header.animate {
-  animation: adjust-header 1.5s linear both;
+  opacity: 1;
 }
 
-@keyframes adjust-header {
-  to {
-    background-color: rgb(20, 108, 148);
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-    font-size: 2rem;
-    height: 200px;
-  }
-}
 main {
   width: 100%;
-  height: 1000px;
+  height: 3000px;
   box-shadow: 26px 17px 90px 1px rgba(0, 0, 0, 0.67);
 }
 main .main__image {
   width: 100%;
   height: 100vh;
-  background-image: url(../assets/Moon\ \(1\).svg);
+  background-image: url("../assets/Moon (1).svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main .main__image .image--text {
+  height: 200px;
+  padding-bottom: 100px;
   font-family: "azonix";
   font-size: 5rem;
-  text-shadow: 13px 5px 13px rgba(0, 0, 0, 0.6);
+  text-shadow: 13px 5px 13px rgba(53, 72, 73, 0.6);
+  background-image: url("../assets/universo.jpg");
+  background-position: top;
+  background-size: cover;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: bold;
+  letter-spacing: 12px;
+}
+main .main__body {
+  width: 100%;
+  height: 2000px;
+  background-color: red;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
 }/*# sourceMappingURL=style.css.map */

@@ -18,31 +18,46 @@
         <h2>Titulo</h2>
       </div>
       <nav>
-        <ul class="nav-bar">
-          <li><a href="#">Temas</a></li>
-          <li><a href="#">calculadora</a></li>
+        <ul class="nav-bar" id="nav">
+          <li class="list-element"><a href="https://www.youtube.com/">Temas</a></li>
+          <li class="list-element"><a href="#">calculadora</a></li>
+          <li class="list-element"><a href="#">Proposito</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <div class="main__image">
+      <section class="main__image">
         <div class="image--text">
-            <h1>Hola Mundo</h1>
+            <h1>Bienvendos</h1>
         </div>
-      </div>
+      </section>
+      <section class="main__body">
+        <div class="body__purpose">
+          <div class="bbody__purpose--text">
+            <h2>Lorem ipsum dolor sit amet </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolores amet, enim sed magnam et numquam quibusdam adipisci minima nobis consequatur natus. Laboriosam, soluta excepturi odit doloribus sunt tempora praesentium!
+          Quidem porro eos explicabo alias, nostrum ipsam sapiente itaque minus reprehenderit expedita temporibus similique qui aperiam voluptatem vero quod molestias autem laudantium non neque ratione. Molestiae aliquid ut quaerat maxime!</p>
+          </div>
+          <div>
+            
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
 
     <script>
       window.addEventListener("scroll", function () {
-        var header = document.getElementById("my-header");
-        var scrollPosition = window.scrollY;
+        let header = document.getElementById("my-header");
+        let scrollPosition = window.scrollY;
+        let listaHeader = document.getElementById("nav");
 
-        if (scrollPosition >= 900) {
-          // Comienza la animación después de 900 píxeles de desplazamiento
+        if (scrollPosition >= 970) {
           header.classList.add("animate");
+          listaHeader.style.display="flex";
         } else {
           header.classList.remove("animate");
+          listaHeader.style.display="none";
         }
       });
     </script>

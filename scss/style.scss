@@ -3,20 +3,21 @@ $primary-color: #146c94;
 $secondary-color: #19a7ce;
 $black: #000000;
 
-@font-face{
-    font-family: 'azonix';
-    src: url(../assets/fonts/Azonix.otf);
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+  font-family: "azonix";
+  src: url(../assets/fonts/Azonix.otf);
+  font-weight: normal;
+  font-style: normal;
 }
 * {
   padding: 0;
   margin: 0;
 }
 
-html {
+html{
   font-size: 62.5%;
 }
+
 
 body {
   font-family: "Exo 2", sans-serif;
@@ -25,59 +26,87 @@ body {
 }
 
 header {
-    $primary-color:rgba(20, 108, 148, .3);
-    background-color: $primary-color;
-    backdrop-filter: blur(5px);
-    font-size: 2rem;
-    width: 100%;
-    height: 24px;
-    z-index: -1;
-    position: fixed;    
-    top: 0;
-    overflow-y: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
-    .header__titulo{
-        width: 200px;
-        padding-left: 60px;
-        
-    }
-    nav{
-        width: 300px;
-    }
-  }
+  display: none;
+  background-color: $primary-color;
+  backdrop-filter: blur(5px);
+  font-size: 2rem;
+  width: 100%;
+  height: 200px;
+  position: fixed;
+  top: 0;
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity .8s; /* Agregar una transición suave de opacidad */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
-  header.animate {
-    animation: adjust-header 1.5s linear both;
+  .header__titulo {
+    width: 200px;
+    padding-left: 60px;
+    font-size: 3rem;
   }
-
-  @keyframes adjust-header {
-    to {
-      background-color: rgba(20, 108, 148);
-      backdrop-filter: blur(5px);
-      font-size: 2rem;
-      height: 200px;
+  nav {
+    width: 500px;
+    font-size: 2.6rem;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      a:hover{
+        color: $white-color;
+        transition: color cubic-bezier(0.55, 0.09, 0.68, 0.53) 0.3s;
+      }
     }
   }
+}
+
+header.animate {
+  opacity: 1; 
+}
 
 main {
   width: 100%;
-  height: 1000px;
-  box-shadow: 26px 17px 90px 1px rgba(0,0,0,0.67);
+  height: 3000px;
+  box-shadow: 26px 17px 90px 1px rgba(0, 0, 0, 0.67);
   .main__image {
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/Moon\ \(1\).svg);
+    background-image: url("../assets/Moon\ \(1\).svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
-    .image--text{
-        font-family: 'azonix';
-        font-size: 5rem;
-        text-shadow: 13px 5px 13px rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image--text {
+      height: 200px;
+      padding-bottom: 100px;
+      font-family: "azonix";
+      font-size: 5rem;
+      text-shadow: 13px 5px 13px rgba(53, 72, 73, 60%);
+      background-image: url("../assets/universo.jpg");
+      background-position: top;
+      background-size: cover;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-weight: bold;
+      letter-spacing: 12px;
     }
+  }
+
+  .main__body{
+    width: 100%;
+    height: 2000px;
+    background-color: red;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
   }
 }
